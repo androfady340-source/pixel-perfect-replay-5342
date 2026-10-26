@@ -24,7 +24,10 @@ export function SiteHeader() {
           <ul className="flex items-center gap-8 text-sm text-muted-foreground">
             {navItems.map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="nav-link transition-colors hover:text-foreground">
+                <a
+                  href={`#${item.id}`}
+                  className="nav-link transition-colors hover:text-foreground"
+                >
                   {item.label}
                 </a>
               </li>
@@ -46,8 +49,12 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
           >
             <span aria-hidden="true" className="relative block h-3 w-5">
-              <span className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 rotate-45" : "top-0"}`} />
-              <span className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 -rotate-45" : "top-3"}`} />
+              <span
+                className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 rotate-45" : "top-0"}`}
+              />
+              <span
+                className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 -rotate-45" : "top-3"}`}
+              />
             </span>
           </Button>
         </div>
@@ -61,19 +68,19 @@ export function SiteHeader() {
         className="mobile-menu bg-background md:hidden"
       >
         <div className="mobile-menu-inner">
-        <ul className="container-page flex flex-col border-t border-border py-4">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                onClick={() => setOpen(false)}
-                className="nav-link block w-fit py-3 font-display text-2xl"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="container-page flex flex-col border-t border-border py-4">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={() => setOpen(false)}
+                  className="nav-link block w-fit py-3 font-display text-2xl"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
     </header>

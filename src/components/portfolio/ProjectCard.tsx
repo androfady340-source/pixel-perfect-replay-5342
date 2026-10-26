@@ -14,7 +14,10 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         aria-label={`${project.name} — open live demo in a new tab`}
         className="project-preview block overflow-hidden rounded-lg border border-border bg-surface"
       >
-        <div className="flex items-center gap-1.5 border-b border-border px-3 py-2" aria-hidden="true">
+        <div
+          className="flex items-center gap-1.5 border-b border-border px-3 py-2"
+          aria-hidden="true"
+        >
           <span className="h-2 w-2 rounded-full bg-border-strong" />
           <span className="h-2 w-2 rounded-full bg-border-strong" />
           <span className="h-2 w-2 rounded-full bg-border-strong" />

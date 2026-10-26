@@ -28,7 +28,8 @@ export function useScrollReveal() {
       );
       elements.forEach((element) => {
         // Never hide content already on screen or previously revealed.
-        if (element.dataset.revealed || element.getBoundingClientRect().top < window.innerHeight) return;
+        if (element.dataset.revealed || element.getBoundingClientRect().top < window.innerHeight)
+          return;
         element.classList.add("reveal-pending");
         observer?.observe(element);
       });

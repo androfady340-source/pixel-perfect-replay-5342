@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
     <section id="top" className="hero-motion relative overflow-hidden border-b border-border">
-      <div aria-hidden="true" className="grid-backdrop absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+      <div
+        aria-hidden="true"
+        className="grid-backdrop absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]"
+      />
       <div className="container-page relative grid gap-12 py-16 md:py-28 lg:grid-cols-[1.4fr_1fr] lg:items-end">
         <div className="hero-copy">
           <p className="eyebrow">AI-Assisted Web Development</p>
@@ -22,13 +25,20 @@ export function Hero() {
             <Button asChild className="motion-cta h-auto px-6 py-3 text-base">
               <a href="#work">Explore My Work</a>
             </Button>
-            <Button asChild variant="outline" className="motion-cta h-auto border-border-strong px-6 py-3 text-base hover:bg-surface-raised hover:text-foreground">
+            <Button
+              asChild
+              variant="outline"
+              className="motion-cta h-auto border-border-strong px-6 py-3 text-base hover:bg-surface-raised hover:text-foreground"
+            >
               <a href="#contact">Contact Me</a>
             </Button>
           </div>
         </div>
 
-        <aside aria-label="Profile" className="hero-profile rounded-lg border border-border bg-surface/80">
+        <aside
+          aria-label="Profile"
+          className="hero-profile rounded-lg border border-border bg-surface/80"
+        >
           <div className="flex items-center gap-2 border-b border-border px-5 py-3">
             <span className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
             <span className="font-mono text-xs text-muted-foreground">profile</span>
