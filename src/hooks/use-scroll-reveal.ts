@@ -28,7 +28,7 @@ export function useScrollReveal() {
       );
       elements.forEach((element) => {
         // Never hide content already on screen or previously revealed.
-        if (element.dataset.revealed || element.getBoundingClientRect().top < window.innerHeight)
+        if (element.dataset["revealed"] || element.getBoundingClientRect().top < window.innerHeight)
           return;
         element.classList.add("reveal-pending");
         observer?.observe(element);
@@ -42,7 +42,7 @@ export function useScrollReveal() {
       const element = event.target.closest<HTMLElement>("[data-reveal]");
       if (!element) return;
       element.classList.remove("reveal-pending");
-      element.dataset.revealed = "true";
+      element.dataset["revealed"] = "true";
       observer?.unobserve(element);
     };
     root.addEventListener("focusin", revealFocused);
