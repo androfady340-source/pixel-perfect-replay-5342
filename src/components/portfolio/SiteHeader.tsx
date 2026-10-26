@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { navItems } from "@/content/site";
+import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,10 @@ export function SiteHeader() {
           <ul className="flex items-center gap-8 text-sm text-muted-foreground">
             {navItems.map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="transition-colors hover:text-foreground">
+                <a
+                  href={`#${item.id}`}
+                  className="nav-link transition-colors hover:text-foreground"
+                >
                   {item.label}
                 </a>
               </li>
@@ -31,13 +35,12 @@ export function SiteHeader() {
           </ul>
         </nav>
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
-            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-block"
-          >
-            Let's talk
-          </a>
-          <button
+          <Button asChild className="motion-cta hidden sm:inline-flex">
+            <a href="#contact">Let's talk</a>
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border md:hidden"
             aria-expanded={open}
@@ -46,31 +49,39 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
           >
             <span aria-hidden="true" className="relative block h-3 w-5">
-              <span className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 rotate-45" : "top-0"}`} />
-              <span className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 -rotate-45" : "top-3"}`} />
+              <span
+                className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 rotate-45" : "top-0"}`}
+              />
+              <span
+                className={`absolute left-0 h-px w-5 bg-foreground transition-transform ${open ? "top-1.5 -rotate-45" : "top-3"}`}
+              />
             </span>
-          </button>
+          </Button>
         </div>
       </div>
       <nav
         id="mobile-nav"
         aria-label="Mobile"
-        hidden={!open}
-        className="border-t border-border bg-background md:hidden"
+        aria-hidden={!open}
+        inert={!open}
+        data-open={open}
+        className="mobile-menu bg-background md:hidden"
       >
-        <ul className="container-page flex flex-col py-4">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                onClick={() => setOpen(false)}
-                className="block py-3 font-display text-2xl"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="mobile-menu-inner">
+          <ul className="container-page flex flex-col border-t border-border py-4">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={() => setOpen(false)}
+                  className="nav-link block w-fit py-3 font-display text-2xl"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     </header>
   );

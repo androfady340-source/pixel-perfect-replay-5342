@@ -81,10 +81,26 @@ export interface Step {
 }
 
 export const steps: readonly Step[] = [
-  { n: "01", title: "Understand", text: "Clarify the idea, the audience and the requirements before building anything." },
-  { n: "02", title: "Design", text: "Plan the page structure and the user experience so the flow feels obvious." },
-  { n: "03", title: "Build", text: "Develop and refine through AI-assisted workflows, iterating prompt by prompt." },
-  { n: "04", title: "Test & Deploy", text: "Verify functionality, responsiveness and the production build before going live." },
+  {
+    n: "01",
+    title: "Understand",
+    text: "Clarify the idea, the audience and the requirements before building anything.",
+  },
+  {
+    n: "02",
+    title: "Design",
+    text: "Plan the page structure and the user experience so the flow feels obvious.",
+  },
+  {
+    n: "03",
+    title: "Build",
+    text: "Develop and refine through AI-assisted workflows, iterating prompt by prompt.",
+  },
+  {
+    n: "04",
+    title: "Test & Deploy",
+    text: "Verify functionality, responsiveness and the production build before going live.",
+  },
 ];
 
 export interface Tool {
