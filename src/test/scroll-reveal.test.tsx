@@ -4,7 +4,13 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 function Fixture() {
   const ref = useScrollReveal();
-  return <main ref={ref}><div data-reveal><a href="#work">Work</a></div></main>;
+  return (
+    <main ref={ref}>
+      <div data-reveal>
+        <a href="#work">Work</a>
+      </div>
+    </main>
+  );
 }
 
 afterEach(() => {
@@ -14,17 +20,34 @@ afterEach(() => {
 });
 
 function setup(reduced = false) {
-  vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: reduced, addEventListener: vi.fn(), removeEventListener: vi.fn() })));
+  vi.stubGlobal(
+    "matchMedia",
+    vi.fn(() => ({ matches: reduced, addEventListener: vi.fn(), removeEventListener: vi.fn() })),
+  );
   let callback: IntersectionObserverCallback | undefined;
   const unobserve = vi.fn();
-  vi.stubGlobal("IntersectionObserver", class {
-    constructor(cb: IntersectionObserverCallback) { callback = cb; }
-    observe = vi.fn();
-    unobserve = unobserve;
-    disconnect = vi.fn();
-  });
-  vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({ top: 3000 } as DOMRect);
-  return { unobserve, enter: (target: Element) => callback?.([{ target, isIntersecting: true } as IntersectionObserverEntry], {} as IntersectionObserver) };
+  vi.stubGlobal(
+    "IntersectionObserver",
+    class {
+      constructor(cb: IntersectionObserverCallback) {
+        callback = cb;
+      }
+      observe = vi.fn();
+      unobserve = unobserve;
+      disconnect = vi.fn();
+    },
+  );
+  vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({
+    top: 3000,
+  } as DOMRect);
+  return {
+    unobserve,
+    enter: (target: Element) =>
+      callback?.(
+        [{ target, isIntersecting: true } as IntersectionObserverEntry],
+        {} as IntersectionObserver,
+      ),
+  };
 }
 
 describe("accessible scroll reveals", () => {
