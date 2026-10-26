@@ -1,11 +1,12 @@
 import { owner } from "@/content/site";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden border-b border-border">
+    <section id="top" className="hero-motion relative overflow-hidden border-b border-border">
       <div aria-hidden="true" className="grid-backdrop absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
       <div className="container-page relative grid gap-12 py-16 md:py-28 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-        <div>
+        <div className="hero-copy">
           <p className="eyebrow">AI-Assisted Web Development</p>
           <h1 className="mt-6 text-[2.6rem] leading-[1.02] font-bold sm:text-6xl lg:text-7xl">
             Turning Ideas Into
@@ -18,22 +19,16 @@ export function Hero() {
             tested site.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#work"
-              className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Explore My Work
-            </a>
-            <a
-              href="#contact"
-              className="rounded-md border border-border-strong px-6 py-3 font-medium transition-colors hover:bg-surface-raised"
-            >
-              Contact Me
-            </a>
+            <Button asChild className="motion-cta h-auto px-6 py-3 text-base">
+              <a href="#work">Explore My Work</a>
+            </Button>
+            <Button asChild variant="outline" className="motion-cta h-auto border-border-strong px-6 py-3 text-base hover:bg-surface-raised hover:text-foreground">
+              <a href="#contact">Contact Me</a>
+            </Button>
           </div>
         </div>
 
-        <aside aria-label="Profile" className="rounded-lg border border-border bg-surface/80">
+        <aside aria-label="Profile" className="hero-profile rounded-lg border border-border bg-surface/80">
           <div className="flex items-center gap-2 border-b border-border px-5 py-3">
             <span className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
             <span className="font-mono text-xs text-muted-foreground">profile</span>

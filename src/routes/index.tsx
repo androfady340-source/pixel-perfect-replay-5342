@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/portfolio/SiteHeader";
 import { Hero } from "@/components/portfolio/Hero";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import {
   AboutSection,
   ContactSection,
@@ -31,6 +32,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const mainRef = useScrollReveal();
   return (
     <>
       <a
@@ -40,7 +42,7 @@ function Index() {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main">
+      <main id="main" ref={mainRef}>
         <Hero />
         <WorkSection />
         <AboutSection />

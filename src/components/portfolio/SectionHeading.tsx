@@ -7,7 +7,7 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ index, eyebrow, title, id }: SectionHeadingProps) {
   return (
-    <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
+    <div data-reveal className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
       <div>
         <p className="eyebrow">
           {index} — {eyebrow}

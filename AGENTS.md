@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Portfolio motion uses CSS and a single scoped Intersection Observer hook; keep content visible without JavaScript and reveal once, with reduced-motion and keyboard-focus escape paths to preserve accessibility without additional animation dependencies.

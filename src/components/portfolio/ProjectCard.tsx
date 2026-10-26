@@ -6,13 +6,13 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   const host = new URL(project.url).host;
 
   return (
-    <article className="group flex flex-col">
+    <article data-reveal className="project-motion group flex flex-col">
       <a
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${project.name} — open live demo in a new tab`}
-        className="block overflow-hidden rounded-lg border border-border bg-surface"
+        className="project-preview block overflow-hidden rounded-lg border border-border bg-surface"
       >
         <div className="flex items-center gap-1.5 border-b border-border px-3 py-2" aria-hidden="true">
           <span className="h-2 w-2 rounded-full bg-border-strong" />
@@ -34,13 +34,13 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
               loading="lazy"
               decoding="async"
               onError={() => setFailed(true)}
-              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              className="project-image h-full w-full object-cover object-top"
             />
           )}
         </div>
       </a>
       <div className="mt-5 flex items-baseline justify-between gap-4">
-        <h3 className="text-2xl font-semibold">
+        <h3 className="project-title text-2xl font-semibold">
           <span className="mr-3 font-mono text-sm text-primary">0{index + 1}</span>
           {project.name}
         </h3>
@@ -51,7 +51,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-flex w-fit items-center gap-2 border-b border-primary pb-0.5 text-sm font-medium transition-colors hover:text-primary"
+        className="project-link mt-4 inline-flex w-fit items-center gap-2 border-b border-primary pb-0.5 text-sm font-medium transition-colors hover:text-primary"
       >
         Live Demo <span aria-hidden="true">↗</span>
         <span className="sr-only">(opens in a new tab)</span>

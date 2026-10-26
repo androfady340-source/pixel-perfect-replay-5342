@@ -10,7 +10,7 @@ export function WorkSection() {
         <p className="-mt-6 mb-12 font-mono text-xs text-muted-foreground md:-mt-10">
           Previews are screenshots of each live site.
         </p>
-        <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
+        <div className="reveal-stagger grid gap-x-10 gap-y-16 md:grid-cols-2">
           {projects.map((p, i) => (
             <ProjectCard key={p.slug} project={p} index={i} />
           ))}
@@ -24,13 +24,13 @@ export function AboutSection() {
   return (
     <section id="about" aria-labelledby="about-title" className="border-b border-border py-20 md:py-28">
       <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-        <div>
+        <div data-reveal>
           <p className="eyebrow">02 — About</p>
           <h2 id="about-title" className="mt-4 text-3xl font-bold sm:text-5xl">
             Ideas first. Tools that help.
           </h2>
         </div>
-        <div className="space-y-5 text-lg text-muted-foreground">
+        <div data-reveal className="space-y-5 text-lg text-muted-foreground">
           <p>
             I'm {owner.name}, based in {owner.location}. I use AI-assisted development tools to turn
             ideas into functional web experiences — booking sites, showrooms and small tools you can
@@ -55,9 +55,9 @@ export function ProcessSection() {
     <section id="process" aria-labelledby="process-title" className="border-b border-border py-20 md:py-28">
       <div className="container-page">
         <SectionHeading id="process-title" index="03" eyebrow="Process" title="Four steps, from idea to live site." />
-        <ol className="grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="reveal-stagger grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
-            <li key={s.n} className="border-b border-border py-8 sm:pr-8 lg:border-b-0 lg:border-r lg:pl-6 lg:first:pl-0 lg:last:border-r-0">
+            <li data-reveal key={s.n} className="border-b border-border py-8 sm:pr-8 lg:border-b-0 lg:border-r lg:pl-6 lg:first:pl-0 lg:last:border-r-0">
               <span className="font-mono text-sm text-primary">{s.n}</span>
               <h3 className="mt-4 text-2xl font-semibold">{s.title}</h3>
               <p className="mt-3 text-muted-foreground">{s.text}</p>
@@ -74,9 +74,9 @@ export function ToolsSection() {
     <section id="tools" aria-labelledby="tools-title" className="border-b border-border py-20 md:py-28">
       <div className="container-page">
         <SectionHeading id="tools-title" index="04" eyebrow="Tools" title="What I work with." />
-        <ul className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="reveal-stagger grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {tools.map((t) => (
-            <li key={t.name} className="bg-background p-6 transition-colors hover:bg-surface">
+            <li data-reveal key={t.name} className="bg-background p-6 transition-colors hover:bg-surface">
               <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-md border border-border-strong font-mono text-sm">
                 {t.mark}
               </span>
@@ -98,10 +98,10 @@ export function ContactSection() {
     <section id="contact" aria-labelledby="contact-title" className="py-20 md:py-32">
       <div className="container-page">
         <p className="eyebrow">05 — Contact</p>
-        <h2 id="contact-title" className="mt-4 max-w-4xl text-4xl font-bold sm:text-6xl">
+        <h2 data-reveal id="contact-title" className="mt-4 max-w-4xl text-4xl font-bold sm:text-6xl">
           Have a project or an opportunity in mind? Let's talk.
         </h2>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
+        <div data-reveal className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
           <a href={`mailto:${owner.email}`} className="group bg-background p-6 transition-colors hover:bg-surface md:p-8">
             <span className="font-mono text-xs text-muted-foreground">Email</span>
             <span className="mt-2 block break-all font-display text-xl font-semibold group-hover:text-primary sm:text-2xl">
