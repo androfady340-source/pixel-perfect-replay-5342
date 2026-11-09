@@ -10,7 +10,7 @@ Personal portfolio showcasing selected web projects, development process, tools,
 - Selected live projects with screenshots, summaries, and demo links.
 - About, process, tools, and contact sections.
 - Scroll-reveal and motion effects with reduced-motion support.
-- Search/social metadata and a dedicated Open Graph preview image.
+- Search/social metadata, a dedicated Open Graph preview image, and an XML sitemap.
 - Static project content maintained in one file for easy updates.
 
 ## Technology
@@ -66,14 +66,9 @@ Edit `src/content/site.ts` to update:
 
 Replace project preview images in `src/assets/projects/` when the live sites change. The social preview image is `public/og-image.jpg`.
 
-## Deploy
+## Deployment
 
-The Vite configuration uses the project's Cloudflare-oriented TanStack/Nitro setup. Build the project, then deploy the generated Worker using Wrangler or the connected Cloudflare deployment workflow.
-
-```bash
-bun run build
-bunx wrangler deploy
-```
+This repository does not currently include a Wrangler configuration file. The production site is hosted on Cloudflare Workers, so verify the connected Cloudflare project's build command, output, and deployment settings before deploying. Do not run `wrangler deploy` from this repository until the Worker configuration is present or the deployment pipeline explicitly supplies it.
 
 ## Maintainer
 
