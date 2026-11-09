@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://pixel-perfect-replay-5342.fadysgb2016.workers.dev/sitemap.xml
