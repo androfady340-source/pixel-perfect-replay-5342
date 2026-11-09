@@ -1,40 +1,80 @@
 # Andro Fady — Portfolio
 
-Personal portfolio of Andro Fady, AI-Assisted Web Developer.
+Personal portfolio showcasing selected web projects, development process, tools, and contact information.
 
-## Stack
-TanStack Start (React 19 + TypeScript), Vite 7, Tailwind CSS v4. No backend, database or secrets.
+**Live portfolio:** https://pixel-perfect-replay-5342.fadysgb2016.workers.dev
 
-## Prerequisites
-Node.js 20+ and npm (or Bun).
+## Highlights
 
-## Commands
+- Responsive portfolio layout with accessible navigation.
+- Selected live projects with screenshots, summaries, and demo links.
+- About, process, tools, and contact sections.
+- Scroll-reveal and motion effects with reduced-motion support.
+- Search/social metadata and a dedicated Open Graph preview image.
+- Static project content maintained in one file for easy updates.
+
+## Technology
+
+- React 19 and TypeScript
+- TanStack Start and TanStack Router
+- Vite 8
+- Tailwind CSS v4 and Radix UI
+- Vitest, Testing Library, ESLint, and Prettier
+- Nitro Cloudflare preset
+
+There is no application database or authentication backend in this portfolio.
+
+## Local development
+
+### Requirements
+
+- Bun (the repository includes `bun.lock`), or Node.js with npm
+
+### Install
+
 ```bash
-npm install        # install dependencies
-npm run dev        # local dev server
-npm run lint       # lint
-npm test           # tests
-npm run build      # production build
+git clone https://github.com/androfady340-source/pixel-perfect-replay-5342.git
+cd pixel-perfect-replay-5342
+bun install --frozen-lockfile
 ```
 
-## Build output
-The build targets Cloudflare (server-rendered on Cloudflare Workers). Output goes to `dist/`
-(`dist/client` for static assets, plus a Worker entry).
+### Run
 
-## Deploy to Cloudflare
-1. Push this project to a Git repository.
-2. Cloudflare dashboard → Workers & Pages → Create → connect the repository.
-3. Build command: `npm run build`. Deploy command: `npx wrangler deploy`.
-4. Or deploy from your machine: `npm run build && npx wrangler deploy`.
+```bash
+bun run dev
+```
 
-## Custom domain
-Not set yet. Once chosen, add it in Cloudflare and, if needed, add a canonical link and an
-absolute `og:image` URL (`https://your-domain/og-image.jpg`) in `src/routes/index.tsx`.
+## Scripts
 
-## Content
-All text, projects and contact details live in `src/content/site.ts`.
-Project previews in `src/assets/projects/` are real screenshots of each live site.
+| Command | Description |
+| --- | --- |
+| `bun run dev` | Start the development server |
+| `bun run lint` | Run ESLint |
+| `bun run test` | Run the Vitest test suite |
+| `bun run build` | Create the Cloudflare production build |
+| `bun run preview` | Preview the build |
+| `bun run format` | Format source files with Prettier |
 
-## Limitations
-- No WhatsApp link (not confirmed). No contact form — email and phone links only.
-- Social preview image is not tagged until a final domain exists.
+## Update portfolio content
+
+Edit `src/content/site.ts` to update:
+
+- Profile title, tagline, location, email, and phone
+- Navigation labels
+- Project names, categories, descriptions, demo URLs, and screenshots
+- Process steps and tools
+
+Replace project preview images in `src/assets/projects/` when the live sites change. The social preview image is `public/og-image.jpg`.
+
+## Deploy
+
+The Vite configuration uses the project's Cloudflare-oriented TanStack/Nitro setup. Build the project, then deploy the generated Worker using Wrangler or the connected Cloudflare deployment workflow.
+
+```bash
+bun run build
+bunx wrangler deploy
+```
+
+## Maintainer
+
+Andro Fady — [GitHub](https://github.com/androfady340-source)
