@@ -68,7 +68,7 @@ Replace project preview images in `src/assets/projects/` when the live sites cha
 
 ## Deployment
 
-This repository does not currently include a Wrangler configuration file. The production site is hosted on Cloudflare Workers, so verify the connected Cloudflare project's build command, output, and deployment settings before deploying. Do not run `wrangler deploy` from this repository until the Worker configuration is present or the deployment pipeline explicitly supplies it.
+Cloudflare Workers settings live in `wrangler.jsonc`. Build command: `bun run build`. Deploy command: `npx wrangler deploy` (or `bun run deploy` to build and deploy in one step).
 
 ## Maintainer
 

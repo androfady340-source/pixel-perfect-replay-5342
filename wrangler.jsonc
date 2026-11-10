@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers config. The build (nitro, cloudflare preset) writes the
+  // Worker to dist/server and static assets to dist/client.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pixel-perfect-replay-5342",
+  "main": "dist/server/index.mjs",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "rules": [{ "type": "ESModule", "globs": ["**/*.mjs", "**/*.js"] }],
+  "assets": { "binding": "ASSETS", "directory": "dist/client" }
+}
