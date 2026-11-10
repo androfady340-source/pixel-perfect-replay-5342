@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Portfolio motion uses CSS and a single scoped Intersection Observer hook; keep content visible without JavaScript and reveal once, with reduced-motion and keyboard-focus escape paths to preserve accessibility without additional animation dependencies.
+- Cloudflare deploys use the root wrangler.jsonc pointing at the nitro build output (dist/server, dist/client); keep it so Wrangler never runs its automatic Vite setup, which can't edit the wrapped vite.config.ts.
