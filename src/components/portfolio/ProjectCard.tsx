@@ -6,7 +6,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   const host = new URL(project.url).host;
 
   return (
-    <article data-reveal className="project-motion group flex flex-col">
+    <article data-reveal className="project-motion group flex min-w-0 flex-col">
       <a
         href={project.url}
         target="_blank"
@@ -21,7 +21,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           <span className="h-2 w-2 rounded-full bg-border-strong" />
           <span className="h-2 w-2 rounded-full bg-border-strong" />
           <span className="h-2 w-2 rounded-full bg-border-strong" />
-          <span className="ml-2 truncate font-mono text-[11px] text-muted-foreground">{host}</span>
+          <span className="ml-2 min-w-0 truncate font-mono text-[11px] text-muted-foreground">{host}</span>
         </div>
         <div className="aspect-[16/10] overflow-hidden">
           {failed ? (

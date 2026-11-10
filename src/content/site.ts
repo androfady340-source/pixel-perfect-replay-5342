@@ -2,6 +2,7 @@ import malabak from "@/assets/projects/malabak.webp";
 import noir from "@/assets/projects/noir.webp";
 import shifaa from "@/assets/projects/shifaa.webp";
 import fixflow from "@/assets/projects/fixflow.webp";
+import sakan from "@/assets/projects/sakan.webp";
 
 export const owner = {
   name: "Andro Fady",
@@ -71,6 +72,15 @@ export const projects: readonly Project[] = [
       "A workflow helper for small stores, restaurants and services: describe what goes wrong, see where the process gets stuck, and get a simpler flow.",
     url: "https://fixflow-insight-harbor.lovable.app",
     image: fixflow,
+  },
+  {
+    slug: "sakan",
+    name: "Sakan",
+    category: "Real Estate Platform",
+    description:
+      "A modern Arabic real estate platform designed to help users discover, buy, rent, and book properties across Egypt.",
+    url: "https://casa-lingua-bookings.androfady340.workers.dev",
+    image: sakan,
   },
 ];
 
